@@ -2,7 +2,7 @@ import {createAsyncThunk, createSlice} from "@reduxjs/toolkit"
 import axios from "axios"
 
 export const fetchRecipes = createAsyncThunk("/recipes/fetchRecipes", async () => {
-    const response = await axios.get("http://localhost:8000/recipes")
+    const response = await axios.get("https://recipe-organiser-server-git-main-manojs-projects-3af452ed.vercel.app/recipes")
 
     return response.data
 })
@@ -41,7 +41,7 @@ const {addRecipe, deleteRecipe} = recipeSlice.actions
 
 export const addRecipeAsync = (newRecipe) => async (dispatch) => {
     try {
-        const response = await fetch("http://localhost:8000/recipes", {
+        const response = await fetch("https://recipe-organiser-server-git-main-manojs-projects-3af452ed.vercel.app/recipes", {
             method: "POST",
             headers: {
                 "Content-Type" : "application/json"
@@ -64,7 +64,7 @@ export const addRecipeAsync = (newRecipe) => async (dispatch) => {
 
 export const deleteRecipeAsync = (recipeId) => async (dispatch) => {
     try {
-        const response = await fetch(`http://localhost:8000/recipes/deleteRecipe/${recipeId}`, {
+        const response = await fetch(`https://recipe-organiser-server-git-main-manojs-projects-3af452ed.vercel.app/recipes/deleteRecipe/${recipeId}`, {
             method: "DELETE"
         })
 
