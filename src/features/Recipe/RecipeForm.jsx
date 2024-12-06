@@ -33,15 +33,15 @@ const RecipeForm = () => {
             <h2 className="mt-4">Add Recipe</h2>
             <form onSubmit={submitHandler}>
                 <label htmlFor="recipeNameInput">Name:</label>
-                <input type="text" id="recipeNameInput" className="form-control w-25 mb-3" onChange={(e) => setNewRecipe({...newRecipe, name: e.target.value})}/>
+                <input type="text" id="recipeNameInput" className="form-control w-25 mb-3" value={newRecipe.name} onChange={(e) => setNewRecipe({...newRecipe, name: e.target.value})}/>
                 <label htmlFor="cuisineTypeInput">Cuisine Type:</label>
-                <input type="text" id="cuisineTypeInput" className="form-control w-25 mb-3" onChange={(e) => setNewRecipe({...newRecipe, cuisine: e.target.value})}/>
+                <input type="text" id="cuisineTypeInput" className="form-control w-25 mb-3" value={newRecipe.cuisine} onChange={(e) => setNewRecipe({...newRecipe, cuisine: e.target.value})}/>
                 <label htmlFor="recipeImageURL">Image Link:</label>
-                <input type="text" id="recipeImageURL" className="form-control w-25 mb-3" onChange={(e) => setNewRecipe({...newRecipe, recipeImageURL: e.target.value})}/>
+                <input type="text" id="recipeImageURL" className="form-control w-25 mb-3" value={newRecipe.recipeImageURL} onChange={(e) => setNewRecipe({...newRecipe, recipeImageURL: e.target.value})}/>
                 <label htmlFor="Ingredients">Ingredients:</label>
-                <textarea id="Ingredients" className="form-control w-25 mb-3" onChange={(e) => setNewRecipe({...newRecipe, ingredients: e.target.value.split(", ")})}></textarea>
+                <textarea id="Ingredients" className="form-control w-25 mb-3" value={newRecipe.ingredients.join(", ")} onChange={(e) => setNewRecipe({...newRecipe, ingredients: e.target.value.split(", ")})}></textarea>
                 <label htmlFor="Instructions">Instructions:</label>
-                <textarea id="Instructions" className="form-control w-25 mb-3" onChange={(e) => setNewRecipe({...newRecipe, instructions: e.target.value.split("\n")})}></textarea>
+                <textarea id="Instructions" className="form-control w-25 mb-3" value={newRecipe.instructions.join("\n")} onChange={(e) => setNewRecipe({...newRecipe, instructions: e.target.value.split("\n")})}></textarea>
                 <button type="submit" className="btn btn-primary">Submit</button>
             </form>
         </div>
