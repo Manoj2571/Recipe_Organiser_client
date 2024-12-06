@@ -1,5 +1,6 @@
 import './App.css';
 import "bootstrap/dist/css/bootstrap.css"
+import "bootstrap/dist/js/bootstrap.bundle.js";
 import HomePage from './pages/HomePage';
 import {BrowserRouter as Router,Routes, Route} from "react-router-dom"
 import Header from './components/Header';
